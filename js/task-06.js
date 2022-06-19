@@ -1,20 +1,11 @@
-const inputEl = document.querySelector('validation-input');
+const inputEl = document.querySelector('#validation-input');
 
-console.log(inputEl);
-inputEl.addEventListener('focus', onInputFocus);
-inputEl.addEventListener('blur', onInputBlur);
+inputEl.addEventListener('blur', onFocusInput);
 
-
-function onInputFocus() {
-    console.log('focus input');
-};
-function onInputBlur() {
-
-    console.log('blur focus');
-    inputEl.addEventListener('input', onInputChange);
-
-};
-function onInputChange(event) {
-    console.log(event.currentTarget.value);
+function onFocusInput(event) {
+  if(event.currentTarget.value.length === +inputEl.dataset.length) {
+   return inputEl.classList.add('valid');
+  }
+    inputEl.classList.add('invalid');
+    
 }
-

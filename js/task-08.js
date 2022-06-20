@@ -7,6 +7,8 @@ const passwordEl = inputEls[1];
 formEl.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
+    event.preventDefault();
+
     const formElements = event.currentTarget.elements;
     const email = formElements.email.value;
     const password = formElements.password.value;
@@ -23,5 +25,5 @@ function onFormSubmit(event) {
     }
     console.log(formData);
 
-    event.preventDefault();
+    event.currentTarget.reset();
 }

@@ -14,18 +14,24 @@ const images = [
 ];
 const listImages = document.querySelector('.gallery');
 
-const elementsImages = images.map((image) => {
-
-  const imageEl = document.createElement('img');
-
-        imageEl.src = image.url;
-        imageEl.alt = image.alt;
-        imageEl.width = 1260;
-        imageEl.height = 750;
-
-  return imageEl;
-});
-
-listImages.append(...elementsImages);
-
+// Варіант 1.
+const createItems = images.map((image) =>
+`<img src = "${image.url}" alt = "${image.alt}" width = "1260" height = "750"></img>`);
+listImages.insertAdjacentHTML('beforeend', createItems);
 console.log(listImages);
+
+// Варіант 2.
+// const elementsImages = images.map((image) => {
+//   const imageEl = document.createElement('img');
+
+//         imageEl.src = image.url;
+//         imageEl.alt = image.alt;
+//         imageEl.width = 1260;
+//         imageEl.height = 750;
+
+//   return imageEl;
+// });
+
+// listImages.append(...elementsImages);
+
+// console.log(listImages);

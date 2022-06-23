@@ -15,7 +15,6 @@ function onFormSubmit(event) {
 
     if (email === '' || password === '') {
         alert('Помилка! Всі поля форми необхідно заповнити.');
-        event.preventDefault();
         return;   
     }
 

@@ -5,8 +5,10 @@ inputEl.addEventListener('blur', onFocusInput);
 
 function onFocusInput(event) {
   if (event.currentTarget.value.length === checkNumber) {
+      inputEl.classList.remove('invalid');
    return inputEl.classList.add('valid');
+
   }
-   return inputEl.classList.add('invalid');
-    
+  inputEl.classList.remove('valid');
+   return inputEl.classList.add('invalid'); 
 }

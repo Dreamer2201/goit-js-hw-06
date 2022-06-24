@@ -14,7 +14,7 @@ function onCreateBoxes(event) {
   
   for (let i = 1; i <= amount; i++) {
     const createDivEl = document.createElement('div');
-    const value = (30 + i * 10);
+    const value = ((30 + divBoxEl.childElementCount * 10)+ i * 10);
     createDivEl.style.width = `${value}px`;
     createDivEl.style.height = `${value}px`;
     createDivEl.style.backgroundColor = getRandomHexColor();
@@ -25,26 +25,6 @@ function onCreateBoxes(event) {
 };
 
 // Варіант 2.
-  //  btnCreate.addEventListener('click', onCreateBoxes);
-  //  btnDestroy.addEventListener('click', destroyBoxes);
-
-  //  function onCreateBoxes(event) {
-  //   const amount = inputEl.value;
-   
-  //   for (let i = 1; i <= amount; i++) {
-  //     let divsArray = [];
-  //     const divEl = document.createElement('div');
-  //     const value = (30 + i * 10);
-  //     divEl.style.width = `${value}px`;
-  //     divEl.style.height = `${value}px`;
-  //     divEl.style.backgroundColor = getRandomHexColor();
-  //     divsArray.push(divEl);
-
-  //     divBoxEl.append(...divsArray);
-  //   };
-  // };
-
-// Варіант 3.
 // btnCreate.addEventListener('click', onCreateBoxes);
 // btnDestroy.addEventListener('click', destroyBoxes);
 
@@ -55,7 +35,7 @@ function onCreateBoxes(event) {
 //   };
 //     const createDivs = numbers.map((number) => {
 //       const divEl = document.createElement('div');
-//       const value = (30 + number * 10);
+//       const value = ((30 + divBoxEl.childElementCount*10) + number * 10);
 //       divEl.style.width = `${value}px`;
 //       divEl.style.height = `${value}px`;
 //       divEl.style.backgroundColor = getRandomHexColor();
@@ -69,7 +49,7 @@ function onCreateBoxes(event) {
 
 function destroyBoxes() {
   inputEl.value = '';
-  divBoxEl.remove('div');
+  divBoxEl.innerHTML = '';
   };
 
 function getRandomHexColor() {

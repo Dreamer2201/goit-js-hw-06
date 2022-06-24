@@ -10,10 +10,10 @@ let counterValue = 0;
 
 function onDecrementButtonClick() {
     counterValue -= 1;
-    valueEl.innerHTML = counterValue;
+    valueEl.textContent = counterValue;
    
 }
 function onIncrementButtonClick() {
     counterValue += 1;
-    valueEl.innerHTML = counterValue;
+    valueEl.textContent = counterValue;
 }

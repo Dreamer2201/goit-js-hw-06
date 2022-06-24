@@ -14,7 +14,7 @@ function onCreateBoxes(event) {
   
   for (let i = 1; i <= amount; i++) {
     const createDivEl = document.createElement('div');
-    const value = ((30 + divBoxEl.childElementCount * 10)+ i * 10);
+    const value = ((20 + divBoxEl.childElementCount * 10)+ i * 10);
     createDivEl.style.width = `${value}px`;
     createDivEl.style.height = `${value}px`;
     createDivEl.style.backgroundColor = getRandomHexColor();
